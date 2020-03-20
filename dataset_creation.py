@@ -50,13 +50,3 @@ for image in glob.glob('dataset_online/train/negative/*.jpg'):
     with open('no.csv', 'a') as myfile:
         wr = csv.writer(myfile, quoting=csv.QUOTE_ALL)
         wr.writerow(ls)
-df1=pd.read_csv("yes.csv")
-df2=pd.read_csv("no.csv")
-
-
-df1.columns=range(7)
-df2.columns=range(7)
-
-df=pd.concat([df1,df2],axis=0)
-
-df.to_csv('m.csv')
